@@ -3,7 +3,7 @@ Contributors: bastho, ecolosites
 Donate link: http://eelv.fr/adherer/
 Tags: cf7, contact form 7, tiny mce, editor, form
 Requires at least: 3.1
-Tested up to: 3.5.1
+Tested up to: 3.9.1
 Stable tag: /trunk
 License: CC BY-NC 3.0
 License URI: http://creativecommons.org/licenses/by-nc/3.0/

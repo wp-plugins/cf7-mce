@@ -30,6 +30,9 @@ The plugins loads Teeny Tiny MCe editor (the pressthis one's)
 
 == Changelog ==
 
+= 0.1.2 =
+* Fix : Hide textarea only if tinyMCE is loaded to prevent interactions
+
 = 0.1.1 =
 * Fix : Detect if tinymce.settings exists
 

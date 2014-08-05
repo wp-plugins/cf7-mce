@@ -30,6 +30,9 @@ The plugins loads Teeny Tiny MCe editor (the pressthis one's)
 
 == Changelog ==
 
+= 0.1.3 =
+* Fix : TinyMCE 4*/WP 3.9+ friendly
+
 = 0.1.2 =
 * Fix : Hide textarea only if tinyMCE is loaded to prevent interactions
 

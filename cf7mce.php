@@ -7,28 +7,34 @@ Author: bastho
 Author URI: http://urbancube.fr/
 Text Domain: wpcf7
 Domain Path: /languages/
-Version: 0.1.2
+Version: 0.1.3
 */
 add_action('wpcf7_add_meta_boxes','cf7mce_add');
 
-function cf7mce_add(){	
-	add_action('admin_footer','cf7mce');
+function cf7mce_add(){
+        add_action('after_wp_tiny_mce','cf7mce');
+        add_action('admin_footer','cf7mce_editor');
+}
+function cf7mce_editor(){
+        wp_editor('','hiddeneditor',array('teeny'=>true));
 }
 function cf7mce($post_id){
- 	wp_editor('','hiddeneditor',array('teeny'=>true));
-	?>
-	<script type="text/javascript">
+        ?>
+        <script type="text/javascript">
  jQuery(document).ready(function() {
-	 if ( typeof( tinyMCE ) == "object" && typeof( tinyMCE.execCommand ) == "function" ) {
-	  	jQuery("#wpcf7-form").addClass("wp-editor-area");
-	  	if(tinyMCE.settings){
-	  		tinyMCE.settings.theme_advanced_buttons1 += ',code';
-	  	    tinyMCE.settings.wpautop = false;
-	  	} 	
-		tinyMCE.execCommand("mceAddControl", false, 'wpcf7-form');
-		jQuery('#wp-hiddeneditor-wrap').hide();
-	 }	 
+         if ( typeof( tinyMCE ) == "object" && typeof( tinyMCE.execCommand ) == "function" ) {
+                jQuery("#wpcf7-form").addClass("wp-editor-area");
+                var ed = new tinymce.Editor('wpcf7-form', {
+                    wpautop:false,
+                    menubar : false,
+                    plugins:"image,wordpress,wpeditimage,wplink",
+                    toolbar: "undo redo | styleselect | bold underline italic |  alignleft aligncenter alignright | bullist numlist | indent outdent | link unlink image code source"
+                    
+                }, tinymce.EditorManager);
+        
+                ed.render();
+         }       
 });
  </script>
-	<?php
+        <?php
 }

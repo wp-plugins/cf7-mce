@@ -44,4 +44,5 @@ The plugins loads Teeny Tiny MCe editor (the pressthis one's)
 
 == Upgrade notice ==
 
-No particular informations
+= 0.1.3 =
+* Warning : Requires WP 3.9+ 

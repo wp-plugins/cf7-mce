@@ -7,37 +7,16 @@ Author: bastho
 Author URI: http://urbancube.fr/
 Text Domain: wpcf7
 Domain Path: /languages/
-Version: 0.1.4
+Version: 1.0.0
 */
-add_action('wpcf7_add_meta_boxes','cf7mce_add');
+add_action('wpcf7_admin_footer','cf7mce_add');
 
-function cf7mce_add(){
-        add_action('after_wp_tiny_mce','cf7mce');
-        add_action('admin_footer','cf7mce_editor');
+function cf7mce_add($contact_form){
+        cf7mce_editor($contact_form);
+        wp_enqueue_script('cf7mce', plugins_url('/cf7mce.js', __FILE__), array('jquery'), '', true);
 }
-function cf7mce_editor(){
+function cf7mce_editor($contact_form){
     echo'<div id="tiny-mce-hidden-4-cf7">';
-        wp_editor('','hiddeneditor',array('teeny'=>true));
+        wp_editor( $contact_form->prop('form'),'hiddeneditor',array('teeny'=>true));
     echo'</div>';
-}
-function cf7mce($post_id){
-        ?>
-        <script type="text/javascript">
-jQuery(document).ready(function() {
-	 jQuery('#tiny-mce-hidden-4-cf7').hide();
-         if ( typeof( tinyMCE ) == "object" && typeof( tinyMCE.execCommand ) == "function" ) {
-                jQuery("#wpcf7-form").addClass("wp-editor-area");
-                var ed = new tinymce.Editor('wpcf7-form', {
-                    wpautop:false,
-                    menubar : false,
-                    plugins:"image,wordpress,wpeditimage,wplink",
-                    toolbar: "undo redo | styleselect | bold underline italic |  alignleft aligncenter alignright | bullist numlist | indent outdent | link unlink image code source"
-
-                }, tinymce.EditorManager);
-
-                ed.render();
-         }
-});
-	</script>
-        <?php
 }

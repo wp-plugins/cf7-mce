@@ -3,10 +3,9 @@ Contributors: bastho, ecolosites
 Donate link: http://eelv.fr/adherer/
 Tags: cf7, contact form 7, tiny mce, editor, form
 Requires at least: 3.1
-Tested up to: 4.1.1
+Tested up to: 4.2.2
 Stable tag: /trunk
-License: CC BY-NC 3.0
-License URI: http://creativecommons.org/licenses/by-nc/3.0/
+License: GPLv2
 
 Add tiny MCE to ContactForm7 editor
 
@@ -29,6 +28,10 @@ The plugins loads Teeny Tiny MCe editor (the pressthis one's)
 
 
 == Changelog ==
+
+= 1.0.0 =
+* Compatible with version 4.2x of Contact form 7
+* Separated JS file
 
 = 0.1.4 =
 * Fix : Hide footer editor in WP 4.1+

@@ -35,6 +35,22 @@ jQuery(document).ready(function () {
         tb_remove(); // close thickbox
         return false;
     });
+    
+    if ( typeof( tinymce ) == "object" && typeof( tinymce.execCommand ) == "function" ) {
+            jQuery("#wpcf7-mail-body, #wpcf7-mail-2-body").addClass("wp-editor-area");
+            var cf7tinymce_params = {
+                wpautop:true,
+                menubar : false,
+                plugins:"image,wordpress,wpeditimage,wplink",
+                toolbar: "undo redo | styleselect | bold underline italic |  alignleft aligncenter alignright | bullist numlist | indent outdent | link unlink image code source"
+
+            };
+            var ed = new tinymce.Editor('wpcf7-mail-body', cf7tinymce_params, tinymce.EditorManager);
+            var ed2 = new tinymce.Editor('wpcf7-mail-2-body', cf7tinymce_params, tinymce.EditorManager);
+
+            ed.render();
+            ed2.render();
+     }
 });
 
 

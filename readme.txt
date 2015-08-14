@@ -3,7 +3,7 @@ Contributors: bastho, ecolosites
 Donate link: http://eelv.fr/adherer/
 Tags: cf7, contact form 7, tiny mce, editor, form
 Requires at least: 3.1
-Tested up to: 4.2.2
+Tested up to: 4.3
 Stable tag: /trunk
 License: GPLv2
 
@@ -28,6 +28,10 @@ The plugins loads Teeny Tiny MCe editor (the pressthis one's)
 
 
 == Changelog ==
+
+= 1.0.0 =
+* WP 4.3 compliant
+* Add editor in emails
 
 = 1.0.0 =
 * Compatible with version 4.2x of Contact form 7

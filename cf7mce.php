@@ -7,7 +7,7 @@ Author: bastho
 Author URI: http://urbancube.fr/
 Text Domain: wpcf7
 Domain Path: /languages/
-Version: 1.0.0
+Version: 1.1.0
 */
 add_action('wpcf7_admin_footer','cf7mce_add');
 
